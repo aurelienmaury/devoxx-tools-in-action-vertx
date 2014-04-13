@@ -1,7 +1,8 @@
 - start Mongod
 - start Mongo Vertx Mod
-- clean Java Verticle after taunting
-- clean other verticle thant Groovy
+- show mod.json
+
+
 
 ===>--- API
 
