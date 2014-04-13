@@ -1,0 +1,16 @@
+- start Mongod
+- start Mongo Vertx Mod
+- clean Java Verticle after taunting
+- clean other verticle thant Groovy
+
+===>--- API
+
+OPTIONS#/
+{
+    "entryPoints": {
+        "GET#/states": "List of available states",
+        "GET#/:state/cities": "List of cities belonging to a state",
+        "GET#/:state/:city": "City details : population and coordinates"
+    }
+}
+

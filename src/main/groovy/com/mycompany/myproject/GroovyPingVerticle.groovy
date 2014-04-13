@@ -26,13 +26,21 @@ import org.vertx.groovy.platform.Verticle
  *
  * @author <a href="http://tfox.org">Tim Fox</a>
  */
+
 class GroovyPingVerticle extends Verticle {
 
-  def start() {
+    def start() {
 
-    vertx.eventBus.registerHandler("ping-address") { message ->
-      message.reply("pong!")
-      container.logger.info("Sent back pong groovy!")
+        println "=========> Sending"
+
+        vertx.eventBus.send('mongo.persistor', [
+                action: 'find',
+                collection: 'zips',
+                matcher: [
+                        state: 'AZ'
+                ]
+        ]) { resp ->
+            println "response : ${resp.body}"
+        }
     }
-  }
 }
