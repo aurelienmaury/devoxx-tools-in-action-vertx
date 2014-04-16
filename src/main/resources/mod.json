@@ -1,6 +1,4 @@
 {
-
-  // Java verticle
   "main":"groovy:com.mycompany.myproject.RestApiVerticle",
 
   // In this example we also provide various other versions of the main verticle, you can uncomment this and

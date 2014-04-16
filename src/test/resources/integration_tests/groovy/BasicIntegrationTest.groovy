@@ -17,10 +17,10 @@ def testHTTP() {
   // Create an HTTP server which just sends back OK response immediately
   vertx.createHttpServer().requestHandler({ req ->
     req.response.end()
-  }).listen(8181, { asyncResult ->
+  }).listen(42042, { asyncResult ->
     assertTrue(asyncResult.succeeded)
     // The server is listening so send an HTTP request
-    vertx.createHttpClient().setPort(8181).getNow("/", { resp ->
+    vertx.createHttpClient().setPort(42042).getNow("/", { resp ->
       assertEquals(200, resp.statusCode)
       /*
       If we get here, the test is complete
